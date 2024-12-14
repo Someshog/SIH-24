@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { decrement, increment } from "@/redux/user/userslice";
 // const [user, setuser] = useState()
 // import { useSession, signIn, signOut } from "next-auth/react"
-const Navbar = () => {
+function Navbar () {
   const dispatch = useDispatch();
   const { data: session } = useSession();
   const ref = useRef();
