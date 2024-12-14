@@ -740,7 +740,7 @@ const Pagemain = () => {
                 <img src="send_btn.svg" alt="" />
               </button>
               <button
-                className="border-2 w-[45%] text-lg bg-blue-100 md:p-2 2xl:p-5 rounded-[100px]"
+                className="border-2 w-[45%] text-lg p-4 bg-blue-100  rounded-[100px]"
                 onClick={newconvo}
               >
                 +
