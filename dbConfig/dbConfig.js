@@ -8,11 +8,10 @@ export async function connectdb() {
       console.log("MongoDB is connected");
     }
     )
-    connection.on('error',() => {
-      console.log("MongoDB connection error" + err);
+    connection.on('error',(err) => {
+      console.log("MongoDB connection error: " + err);
       process.exit()
-    }
-    )
+    })
   } catch (error) { 
     console.log("DB not connected");
     console.log(error);
