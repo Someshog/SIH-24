@@ -2,9 +2,10 @@
 import React,{useRef} from "react";
 import dynamic from "next/dynamic";
 import Script from "next/script";
+import Image from "next/image";
 import Blog from "./components/Blog";
 const Pagemain = dynamic(() => import("./components/Pagemain"), { ssr: false });
-const page = () => {  
+const Page = () => {  
   const messageEndRef = useRef(null);
 
   return (
@@ -22,10 +23,12 @@ const page = () => {
             </div>
             <div className="dynamicticket relative flex items-center justify-center w-[60%] md:w-[70%]  m-4 ">
               {/* <img className="" src="tickets.png" alt="" /> */}
-              <img
+              <Image
                 className="absolute my-auto flex"
-                src="11.jpeg"
-                alt=""
+                src="/11.jpeg"
+                alt="Jaipur Heritage"
+                width={800}
+                height={600}
               />
               <button onClick={() => {
                 messageEndRef.current?.scrollIntoView({ behavior: "smooth" })
@@ -58,4 +61,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

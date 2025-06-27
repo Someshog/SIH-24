@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useSelector, useDispatch } from "react-redux";
 import { decrement, increment } from "@/redux/user/userslice";
+import Image from "next/image";
 // const [user, setuser] = useState()
 // import { useSession, signIn, signOut } from "next-auth/react"
 function Navbar () {
@@ -320,11 +321,13 @@ function Navbar () {
                         type="password"
                       />
 
-                      <img
-                        src="eyeclose.svg"
+                      <Image
+                        src="/eyeclose.svg"
                         ref={ref}
                         onClick={showpassword}
-                        width="30px"
+                        width={30}
+                        height={30}
+                        alt="Toggle password visibility"
                         className="absolute right-3 top-9 cursor-pointer "
                       />
                       <div

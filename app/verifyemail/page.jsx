@@ -2,7 +2,8 @@
 import React, { useState,useEffect,useRef } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
-const page = () => {
+import Image from "next/image";
+const Page = () => {
   const ref = useRef()
   const [token, settoken] = useState("");
   const [verified, setverified] = useState(false);
@@ -70,11 +71,13 @@ const page = () => {
             })}
             type="password"
           />
-          <img
+          <Image
             src="/eyeclose.svg"
             ref={ref}
             onClick={showpassword}
-            width="30px"
+            width={30}
+            height={30}
+            alt="Toggle password visibility"
             className="absolute right-3 top-9 cursor-pointer "
           />
           {errors.password && (
@@ -96,4 +99,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

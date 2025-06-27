@@ -1,13 +1,16 @@
 "use client";
-import { useEffect, UseState, useref, Children } from "react";
+import { useEffect, Children } from "react";
+import { useState , useRef} from "react";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 import Script from "next/script";
+import Image from "next/image";
 import * as chat from "@botpress/chat";
 import { useSelector } from "react-redux";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateTimePicker } from "@mui/x-date-pickers/DateTimePicker";
+import { TextField } from "@mui/material";
 import { AUTOMATIC_FONT_OPTIMIZATION_MANIFEST } from "next/dist/shared/lib/constants";
 const Pagemain = () => {
   const [conv, setconv] = useState({});
@@ -304,7 +307,7 @@ const Pagemain = () => {
       <div className="border-4 w-[99%] bg-slate-100 border-blue-400 rounded-2xl m-2 flex items-center justify-center text-black">
         <div className="w-[30%] md:w-[35%] text-black h-[70vh] md:h-[90vh] flex flex-col relative border-4  m-4 border-blue-300 rounded-2xl bg-white">
           <div className="header w-[80%] mx-auto m-2 flex items-center h-[15%] rounded-lg">
-            <img className="m-2" src="group 5.png" alt="" width={60} />
+            <Image className="m-2" src="/group 5.png" alt="Group icon" width={60} height={60} />
             {loading ? (
               <div className="loading-icon absolute right-10">
                 {" "}
@@ -320,9 +323,9 @@ const Pagemain = () => {
                 <li className="text font-semibold"> Musebot</li>
                 <li className="text font-medium text-gray-400 flex items-center">
                   {Chat ? (
-                    <img className="m-1" src="online.png" alt="" />
+                    <Image className="m-1" src="/online.png" alt="Online status" width={8} height={8} />
                   ) : (
-                    <img className="m-1" src="offline.png" alt="" />
+                    <Image className="m-1" src="/offline.png" alt="Offline status" width={8} height={8} />
                   )}
                   {Chat ? "Always active" : "Offline"}
                 </li>
@@ -348,7 +351,7 @@ const Pagemain = () => {
                   </div>
                 ) : (
                   <div className="flex items-start justify-center">
-                    <img className="m-1" src="group 5.png" width={50} alt="" />
+                    <Image className="m-1" src="/group 5.png" width={50} height={50} alt="Group icon" />
 
                     <div>
                       <p className="border-2 border-gray-300 rounded-2xl p-1 px-3 2xl:pt-2 2xl:pb-2 font-medium ">
@@ -728,7 +731,7 @@ const Pagemain = () => {
             />
             <div className="chatbuttons flex w-[30%] items-center justify-around">
               <button
-                className=" bg-blue-100 border-2 w-[45%] p-3 rounded-[100px]"
+                className=" bg-blue-100 border-2 w-[40%] p-3 rounded-[100px]"
                 onClick={() => {
                   if (index) {
                     send2();
@@ -737,10 +740,10 @@ const Pagemain = () => {
                   }
                 }}
               >
-                <img src="send_btn.svg" alt="" />
+                <Image src="/send_btn.svg" alt="Send button" width={24} height={24} />
               </button>
               <button
-                className="border-2 w-[45%] text-lg p-4 bg-blue-100  rounded-[100px]"
+                className="border-2 w-[40%] p-3 text-lg bg-blue-100  rounded-[100px]"
                 onClick={newconvo}
               >
                 +
